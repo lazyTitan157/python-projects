@@ -96,7 +96,11 @@ print(next(g))
 print('blahbla')
 print(next(g)) #greeting yield로 생성된 것들 차례로 출력
 
+# 리스트, 딕셔너리, 집합, 제너레이터 내포표기 방식
+#locals(), globals() #변수 공간과 범위
+
 ###### except ######
+
 
 ###### class ######
 # 덕타이핑
@@ -104,5 +108,3 @@ print(next(g)) #greeting yield로 생성된 것들 차례로 출력
 # 다중상속
 # 클래스 메소드 / 스태틱 메소드
 # 특수메소드
-
-
