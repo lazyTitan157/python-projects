@@ -100,10 +100,68 @@ print(next(g)) #greeting yield로 생성된 것들 차례로 출력
 #locals(), globals() #변수 공간과 범위
 
 ###### except ######
-
+#del l #2
+try:
+  l[5] #1
+except IndexError as ex: #1
+  print("index error: {}".format(ex))
+except NameError as ex: #2
+  print("Name is not defined")
+except Exception as ex:
+  print("other:{}".format(ex))
+finally:
+  print('clean up')
+#BaseException - docs: Exception Hierachy
+#self defined exception
+class UppercaseError(Exception):
+  pass
+def check():
+  words = ['apple', 'orange', 'banana']
+  for word in words:
+    if word.isupper():
+      return UppercaseError(word)
+try:
+  check()
+except UppercaseError as ex:
+  print("this is my fault: {}".format(ex))
 
 ###### class ######
+# function instead of class
+def person(name):
+  if name == 'A':
+    print('hi')
+    
+class Person(object): #object 생략 가능, 상속시 base class로 사용 가능
+  def __init__(self, name): #생성자
+    self.name = name
+    print(self.name)
+  def say_something(self):
+    print('hi')
+  def __del__(self): #소멸자
+    print("good bye")
+    
+person = Person("my name")
+person.say_something()
+del person #소멸자 실행
+
+class Student(Person):
+  def __init__(self, name="student", student_id=1):
+    super().__init__(name) #Person의 init 사용
+    self.student_id = 1
+  pass
+
+class Teacher(Person):
+  def say_something(self):
+    print("hi, student")
+  
+person = Person("person")
+student = Student() #매개변수 없어도 실행가능?
+student.say_something()
+teacher = Teacher()
+teacher.say_something()
+    
 # 덕타이핑
+
 # 추상클래스
 # 다중상속
 # 클래스 메소드 / 스태틱 메소드
