@@ -172,9 +172,7 @@ teacher.say_something()
     
 # 덕타이핑: 동적 타이핑의 한 종류로, 객체의 변수 및 메소드의 집합이 객체의 타입을 결정하는 것을 말한다
 #https://www.udemy.com/course/python-beginner-korean/learn/lecture/11659912#overview
-  
 # 추상클래스
-
-# 다중상속
+# 다중상속 https://dojang.io/mod/page/view.php?id=2388
 # 클래스 메소드 / 스태틱 메소드
-# 특수메소드
+# 특수메소드 https://wikidocs.net/89
