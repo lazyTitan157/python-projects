@@ -134,6 +134,7 @@ def person(name):
 class Person(object): #object 생략 가능, 상속시 base class로 사용 가능
   def __init__(self, name): #생성자
     self.name = name
+    self.age = age
     print(self.name)
   def say_something(self):
     print('hi')
@@ -145,10 +146,18 @@ person.say_something()
 del person #소멸자 실행
 
 class Student(Person):
-  def __init__(self, name="student", student_id=1):
+  def __init__(self, name="student", student_id=1, class_number=1, class_name="class1"):
     super().__init__(name) #Person의 init 사용
     self.student_id = 1
-  pass
+    self._class_number = class_number
+    self.__class_name = class_name
+    
+  @property
+  def take_class(self):
+    #class내에서만 접근 가능, 클래스 외부에서 생성한 object에서는 접근 불가능
+    print(self.__class_name)
+    #값을 읽을 수는 있지만, 조건이 성립해야만 덮어쓸 수 있다.
+    return self._class_number
 
 class Teacher(Person):
   def say_something(self):
@@ -159,10 +168,13 @@ student = Student() #매개변수 없어도 실행가능?
 student.say_something()
 teacher = Teacher()
 teacher.say_something()
+#print(teacher.__class_name) #error, class내에서만 접근 가능
     
-# 덕타이핑
-
+# 덕타이핑: 동적 타이핑의 한 종류로, 객체의 변수 및 메소드의 집합이 객체의 타입을 결정하는 것을 말한다
+#https://www.udemy.com/course/python-beginner-korean/learn/lecture/11659912#overview
+  
 # 추상클래스
+
 # 다중상속
 # 클래스 메소드 / 스태틱 메소드
 # 특수메소드
