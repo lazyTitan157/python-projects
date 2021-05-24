@@ -23,10 +23,10 @@
 ### [Data source]
 1. 일별 환율정보 가져오기: [한국은행경제통계시스템에서 CSV로 다운로드](http://ecos.bok.or.kr/flex/EasySearch.jsp?langGubun=K&topCode=022Y013#)
 2. 일별 비트코인 시세정보 가져오기   
-2.1. [업비트 개발자 센터](https://docs.upbit.com/)에서 API Key 발급받기   
-2.2. [REST API를 이용한 업비트 시세 수신 방법](https://docs.upbit.com/docs/upbit-quotation-restful-api)   
-2.3. [QUOTATION API: 시세조회-일캔들](https://docs.upbit.com/reference#%EC%9D%BCday-%EC%BA%94%EB%93%A4-1)
-2.4. 환율정보와 같은 scope로 시세정보 저장(.csv)      
+2.1. [REST API를 이용한 업비트 시세 수신 방법](https://docs.upbit.com/docs/upbit-quotation-restful-api)   
+2.2. [QUOTATION API: 시세조회-일캔들](https://docs.upbit.com/reference#%EC%9D%BCday-%EC%BA%94%EB%93%A4-1)   
+2.3. 환율정보와 같은 scope로 시세정보 저장(.csv)      
+*(참고) [업비트 개발자 센터](https://docs.upbit.com/)에서 API Key 발급: API를 통한 거래시 필요, 시세조회만 하는 경우는 불필요.
 ```
 url = "https://api.upbit.com/v1/candles/days"
 querystring = {"market":"KRW-BTC","count":"1000"}
